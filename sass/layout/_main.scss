@@ -1,3 +1,39 @@
+@use '../abstracts/variables';
+
+main {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    .container {
+        width: 327px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+        border-radius: 23px;
+
+        .illustration-container {
+            position: relative;
+            .illustration {
+                position: absolute;
+                left: 15px;
+                top: -108px;
+            }
+            .illustration-shadow {
+                position: absolute;
+                left: 42px;
+                top: 2px;
+            }
+        }
+        h1 {
+            text-align: center;
+            margin-top: 137px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 32.19px;
+        } 
+    }
+}
+
 .arrow-up {
     transform: scaleY(-1);
 }
+
