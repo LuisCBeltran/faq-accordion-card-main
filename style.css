@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,10 +18,18 @@ main {
   place-items: center;
 }
 main .container {
+  display: flex;
+  flex-direction: column;
   width: 327px;
   background-color: #FFFFFF;
   box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
   border-radius: 23px;
+}
+@media screen and (min-width: 1440px) {
+  main .container {
+    flex-direction: row;
+    width: 920px;
+  }
 }
 main .container .illustration-container {
   position: relative;
@@ -29,10 +39,39 @@ main .container .illustration-container .illustration {
   left: 15px;
   top: -108px;
 }
+@media screen and (min-width: 1440px) {
+  main .container .illustration-container .illustration {
+    display: none;
+  }
+}
 main .container .illustration-container .illustration-shadow {
   position: absolute;
   left: 42px;
   top: 2px;
+}
+@media screen and (min-width: 1440px) {
+  main .container .illustration-container .illustration-shadow {
+    display: none;
+  }
+}
+main .container .illustration-container .illustration-shadow-desktop {
+  display: none;
+}
+main .container .illustration-container .illustration-desktop {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  main .container .illustration-container .illustration-desktop {
+    position: absolute;
+    left: -84px;
+    display: block;
+    width: 472px;
+    height: 359px;
+    clip-path: inset(0 0 0 17.8%);
+  }
+}
+main .container .illustration-container .illustration-box-desktop {
+  display: none;
 }
 main .container h1 {
   text-align: center;
@@ -41,9 +80,56 @@ main .container h1 {
   font-weight: 700;
   line-height: 32.19px;
 }
+main .container .accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 48px;
+}
+main .container .accordion .accordion-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 279px;
+  height: auto;
+  border-bottom: 1px solid #e7e7e9;
+  overflow: hidden;
+}
+main .container .accordion .accordion-item input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+main .container .accordion .accordion-item .accordion-link {
+  display: flex;
+  padding: 19px 0;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 13.08px;
+  color: #4a4b5e;
+  cursor: pointer;
+}
+main .container .accordion .accordion-item .accordion-link::after {
+  content: url("images/icon-arrow-down.svg");
+  transition: all 0.35s;
+}
+main .container .accordion .accordion-item .answer {
+  max-height: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #787887;
+  transition: all 0.35s;
+}
 
-.arrow-up {
-  transform: scaleY(-1);
+input:checked + .accordion-link {
+  font-weight: 700;
+}
+input:checked + .accordion-link::after {
+  transform: rotate(180deg);
+}
+input:checked ~ .answer {
+  padding-bottom: 60px;
 }
 
 /*# sourceMappingURL=style.css.map */
