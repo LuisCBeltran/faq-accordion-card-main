@@ -27,15 +27,20 @@ main .container {
 }
 @media screen and (min-width: 1440px) {
   main .container {
-    flex-direction: row;
     width: 920px;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-position: -577px -294px;
+    background-repeat: no-repeat;
   }
 }
 main .container .illustration-container {
   position: relative;
 }
 main .container .illustration-container .illustration {
+  background-image: url("images/illustration-woman-online-mobile.svg");
   position: absolute;
+  width: 266px;
+  height: 196px;
   left: 15px;
   top: -108px;
 }
@@ -45,7 +50,10 @@ main .container .illustration-container .illustration {
   }
 }
 main .container .illustration-container .illustration-shadow {
+  background-image: url("images/bg-pattern-mobile.svg");
   position: absolute;
+  width: 240px;
+  height: 104px;
   left: 42px;
   top: 2px;
 }
@@ -63,6 +71,7 @@ main .container .illustration-container .illustration-desktop {
 @media screen and (min-width: 1440px) {
   main .container .illustration-container .illustration-desktop {
     position: absolute;
+    top: 72px;
     left: -84px;
     display: block;
     width: 472px;
@@ -72,13 +81,35 @@ main .container .illustration-container .illustration-desktop {
 }
 main .container .illustration-container .illustration-box-desktop {
   display: none;
+  width: 191px;
+  height: 184px;
+}
+@media screen and (min-width: 1440px) {
+  main .container .illustration-container .illustration-box-desktop {
+    top: 208px;
+    left: -94px;
+    position: absolute;
+    display: block;
+    background-image: url("images/illustration-box-desktop.svg");
+  }
 }
 main .container h1 {
+  width: 100%;
+  align-self: center;
   text-align: center;
   margin-top: 137px;
   font-size: 32px;
   font-weight: 700;
   line-height: 32.19px;
+}
+@media screen and (min-width: 1440px) {
+  main .container h1 {
+    width: 350px;
+    margin-top: 65px;
+    margin-right: 95px;
+    align-self: flex-end;
+    text-align: start;
+  }
 }
 main .container .accordion {
   display: flex;
@@ -86,6 +117,15 @@ main .container .accordion {
   align-items: center;
   margin-top: 25px;
   margin-bottom: 48px;
+}
+@media screen and (min-width: 1440px) {
+  main .container .accordion {
+    width: 350px;
+    margin-top: 43px;
+    margin-right: 95px;
+    margin-bottom: 83px;
+    align-self: flex-end;
+  }
 }
 main .container .accordion .accordion-item {
   display: flex;
@@ -95,6 +135,11 @@ main .container .accordion .accordion-item {
   height: auto;
   border-bottom: 1px solid #e7e7e9;
   overflow: hidden;
+}
+@media screen and (min-width: 1440px) {
+  main .container .accordion .accordion-item {
+    width: 350px;
+  }
 }
 main .container .accordion .accordion-item input {
   position: absolute;
@@ -110,9 +155,18 @@ main .container .accordion .accordion-item .accordion-link {
   color: #4a4b5e;
   cursor: pointer;
 }
+main .container .accordion .accordion-item .accordion-link:hover {
+  color: #f47c57;
+}
 main .container .accordion .accordion-item .accordion-link::after {
   content: url("images/icon-arrow-down.svg");
   transition: all 0.35s;
+}
+@media screen and (min-width: 1440px) {
+  main .container .accordion .accordion-item .accordion-link {
+    font-size: 14px;
+    line-height: 14.08px;
+  }
 }
 main .container .accordion .accordion-item .answer {
   max-height: 0;
